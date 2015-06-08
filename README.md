@@ -20,9 +20,9 @@ new TypeAhead(document.getElementById('my-control'), [
 ```javascript
 var t = new TypeAhead(document.getElementById('my-control'));
 
-t.getCandidates = function (query, callback) {
-	$.getJSON('/suggest?q=' + query, function () {
-		callback(response.options);
+t.getCandidates = function (callback) {
+	$.getJSON('/suggest?q=' + this.query, function () {
+		callback(response);
 	});
 };
 ```
