@@ -3,6 +3,11 @@ type-ahead.js
 
 A lightweight and extensible type ahead library
 
+Demo
+----
+
+Check out http://marcojetson.github.io/type-ahead.js/
+
 Usage
 -----
 
