@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>A lightweight and extensible type ahead library</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>type-ahead.js</h1>
+            <p class="lead">A lightweight and extensible type ahead library</p>
+            <section>
+                <h3>Demos</h3>
+                <h2>Local</h2>
+                <div class="type-ahead-group">
+                    <input id="example1" type="text" autocomplete="off" placeholder="Enter your continent">
+                </div>
+                <pre>
+new TypeAhead(document.getElementById('type-ahead'), [
+    'Asia', 'Africa', 'North America', 'South America', 'Antarctica', 'Europe', 'Australia'
+]);</pre>
+            </section>
+            <section>
+                <h2>Server side</h2>
+                <div class="type-ahead-group">
+                    <input id="example2" type="text" autocomplete="off" placeholder="Search something">
+                </div>
+                <pre>
+var t = new TypeAhead(document.getElementById('type-ahead')),
+    xhr;
+
+t.getCandidates = function (callback) {
+    if (xhr) {
+        xhr.abort();
+    }
+
+    xhr = $.getJSON('https://clients1.google.com/complete/search?client=youtube&tok=Iu2UFybBVjvwBqGBmnMaKw&callback=?&q=' + this.query, function (response) {
+        var candidates = [];
+        for (var i = 0; i < response[1].length; i++) {
+            candidates.push(response[1][i][0]);
+        }
+
+        callback(candidates);
+    });
+};</pre>
+            </section>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="type-ahead.js"></script>
+        <script src="examples.js"></script>
+    </body>
+</html>
