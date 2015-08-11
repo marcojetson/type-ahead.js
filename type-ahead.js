@@ -65,7 +65,7 @@ TypeAhead.prototype.handleKeyUp = function (keyCode) {
     var typeAhead = this;
     this.getCandidates(function (candidates) {
         for (var i = 0; i < candidates.length; i++) {
-            typeAhead.list.add(typeAhead.getItemValue(candidates[i]));
+            typeAhead.list.add(candidates[i]);
             if (typeAhead.limit !== false && i === typeAhead.limit) {
                 break;
             }
