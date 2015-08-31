@@ -39,6 +39,9 @@
     "compatible"
   ],
   "author": "Marco (@marcojetson)",
+  "contributors": [
+    "Trent Oswald <trentoswald@therebelrobot.com> [@therebelrobot] (http://therebelrobot.com)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcojetson/type-ahead.js/issues"
