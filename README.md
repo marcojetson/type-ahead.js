@@ -1,15 +1,35 @@
-type-ahead.js
-=============
+# type-ahead.js
 
-A lightweight and extensible type ahead library
+A lightweight and extensible type ahead library. Browserify compatible.
 
-Demo
-----
+## Demo
 
 Check out http://marcojetson.github.io/type-ahead.js/
 
-Usage
------
+## Install
+### Browserify via NPM
+
+To use type-ahead with Browserify, install it into your project via npm:
+
+```bash
+npm install type-ahead
+```
+
+Once installed, include the library using `require`:
+
+```javascript
+var TypeAhead = require('type-ahead')
+```
+
+### Manually
+
+You can also include the standalone library by downloading it [here](https://raw.githubusercontent.com/marcojetson/type-ahead.js/master/type-ahead.js) (or [minified](https://raw.githubusercontent.com/marcojetson/type-ahead.js/master/type-ahead.min.js)), and including it in your HTML page:
+
+```html
+<script type="text/javascript" src="type-ahead.js"></script>
+```
+
+## Usage
 
 ### Simple usage
 
@@ -32,7 +52,7 @@ t.getCandidates = function (callback) {
 };
 ```
 
-_Example is using jQuery for simplicity_
+*Example is using jQuery for simplicity*
 
 
 ### Min length and limit
@@ -62,3 +82,8 @@ t.getItemValue = function (item) {
     return item.name;
 };
 ```
+## Contributing
+
+Found an issue? Have a feature request? Open a [Github Issue]() and/or [fork this repo]().
+
+## License
