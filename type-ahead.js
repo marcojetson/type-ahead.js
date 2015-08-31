@@ -16,11 +16,11 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.list = new TypeAheadList(typeAhead);
 
-    this.minLength = opts.hasOwnProperty('minLength') || 3;
+    this.minLength = opts.hasOwnProperty('minLength') ? opts.minLength : 3;
 
-    typeAhead.limit = opts.hasOwnProperty('limit') || 5;
+    typeAhead.limit = opts.hasOwnProperty('limit') ? opts.limit : 5;
 
-    typeAhead.cb = opts.callback || function(){};
+    typeAhead.cb = opts.hasOwnProperty('callback') ? opts.callback : function(){};
 
     typeAhead.query = '';
 

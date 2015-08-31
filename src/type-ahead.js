@@ -19,7 +19,7 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.limit = opts.hasOwnProperty('limit') ? opts.limit : 5;
 
-    typeAhead.cb = opts.callback || function(){};
+    typeAhead.cb = opts.hasOwnProperty('callback') ? opts.callback : function(){};
 
     typeAhead.query = '';
 
