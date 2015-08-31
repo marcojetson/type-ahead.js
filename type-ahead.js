@@ -41,6 +41,11 @@ var TypeAhead = function (element, candidates) {
         typeAhead.handleBlur.call(typeAhead);
     });
 
+    typeAhead.update = function(candidates){
+      this.candidates = candidates;
+      typeAhead.handleKeyUp.call(typeAhead);
+    }
+
     return typeAhead;
 };
 
