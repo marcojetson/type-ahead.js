@@ -2,7 +2,7 @@
   "name": "type-ahead",
   "version": "1.0.0",
   "description": "A lightweight and extensible type ahead library",
-  "main": "type-ahead.js",
+  "main": "src/type-ahead.js",
   "scripts": {
     "build":"browserify src/type-ahead.js -s TypeAhead -o type-ahead.js && uglifyjs type-ahead.js -o type-ahead.min.js"
   },
