@@ -82,6 +82,20 @@ t.getItemValue = function (item) {
     return item.name;
 };
 ```
+
+### Dynamically update list
+Once you've created the `TypeAhead` instance, you can update the items in the autocomplete list via:
+
+```javascript
+var t = new TypeAhead(document.getElementById('my-control'), [
+	'Asia', 'Africa', 'Europe', 'North America', 'South America', 'Oceania'
+]);
+
+t.update([
+	'Asia', 'Europe', 'South America', 'Oceania'
+])
+```
+
 ## Contributing
 
 Found an issue? Have a feature request? Open a [Github Issue]() and/or [fork this repo]().
