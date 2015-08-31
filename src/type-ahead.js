@@ -329,3 +329,8 @@ TypeAheadList.prototype.previous = function () {
 TypeAheadList.prototype.next = function () {
     this.move(this.active === this.items.length - 1 ? 0 : this.active + 1);
 };
+
+/**
+ * Export TypeAhead for Browserify
+ */
+module.exports = TypeAhead
