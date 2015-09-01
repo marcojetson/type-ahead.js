@@ -19,7 +19,7 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.limit = opts.hasOwnProperty('limit') ? opts.limit : 5;
 
-    typeAhead.cb = opts.hasOwnProperty('callback') ? opts.callback : function(){};
+    typeAhead.callback = opts.hasOwnProperty('callback') ? opts.callback : function(){};
 
     typeAhead.query = '';
 
@@ -92,7 +92,7 @@ TypeAhead.prototype.handleKeyDown = function (keyCode) {
     if (keyCode === 13 && !this.list.isEmpty()) {
         this.value(this.list.items[this.list.active]);
         this.list.hide();
-        this.cb(this.list.items[this.list.active]);
+        this.callback(this.list.items[this.list.active]);
         return true;
     }
 
