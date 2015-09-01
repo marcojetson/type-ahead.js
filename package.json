@@ -1,0 +1,54 @@
+{
+  "name": "type-ahead",
+  "version": "1.0.0",
+  "description": "A lightweight and extensible type ahead library",
+  "main": "src/type-ahead.js",
+  "scripts": {
+    "build":"browserify src/type-ahead.js -s TypeAhead -o type-ahead.js && uglifyjs type-ahead.js -o type-ahead.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcojetson/type-ahead.js.git"
+  },
+  "keywords": [
+    "typeahead",
+    "type",
+    "ahead",
+    "type-ahead",
+    "a",
+    "head",
+    "auto",
+    "complete",
+    "autocomplete",
+    "typ",
+    "typing",
+    "completing",
+    "micro",
+    "microjs",
+    "marcojetson",
+    "marco",
+    "jetson",
+    "lightweight",
+    "extensible",
+    "objects",
+    "strings",
+    "list",
+    "collections",
+    "mithril",
+    "mithriljs",
+    "compatible"
+  ],
+  "author": "Marco (@marcojetson)",
+  "contributors": [
+    "Trent Oswald <trentoswald@therebelrobot.com> [@therebelrobot] (http://therebelrobot.com)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcojetson/type-ahead.js/issues"
+  },
+  "homepage": "https://github.com/marcojetson/type-ahead.js#readme",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "uglify-js": "^2.4.24"
+  }
+}
