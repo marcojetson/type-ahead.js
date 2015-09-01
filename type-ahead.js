@@ -20,6 +20,8 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.limit = opts.hasOwnProperty('limit') ? opts.limit : 5;
 
+    typeAhead.callback = opts.hasOwnProperty('callback') ? opts.callback : function(){};
+
     typeAhead.query = '';
 
     typeAhead.selected = null;
@@ -91,6 +93,7 @@ TypeAhead.prototype.handleKeyDown = function (keyCode) {
     if (keyCode === 13 && !this.list.isEmpty()) {
         this.value(this.list.items[this.list.active]);
         this.list.hide();
+        this.callback(this.list.items[this.list.active]);
         return true;
     }
 

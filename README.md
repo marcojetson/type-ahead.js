@@ -98,6 +98,23 @@ t.update([
 ])
 ```
 
+### Callback
+
+If you want to run code after autocomplete updates the input (e.g. to update a model), simply add a `callback` function into the `opts` parameter:
+
+```javascript
+var opts = {
+	callback:function(newValue){
+		console.log(newValue);
+		// Do code here
+	}
+};
+
+var t = new TypeAhead(document.getElementById('my-control'), [
+	'Asia', 'Africa', 'Europe', 'North America', 'South America', 'Oceania'
+], opts);
+```
+
 ## Contributing
 
 Found an issue? Have a feature request? Open a [Github Issue]() and/or [fork this repo]().
