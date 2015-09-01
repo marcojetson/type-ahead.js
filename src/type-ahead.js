@@ -5,8 +5,9 @@
  * @param {HTMLInputElement} element
  * @param {Array} candidates
  */
-var TypeAhead = function (element, candidates) {
+var TypeAhead = function (element, candidates, opts) {
     var typeAhead = this;
+    opts = opts || {};
 
     typeAhead.element = element;
 
@@ -14,9 +15,9 @@ var TypeAhead = function (element, candidates) {
 
     typeAhead.list = new TypeAheadList(typeAhead);
 
-    this.minLength = 3;
+    this.minLength = opts.hasOwnProperty('minLength') ? opts.minLength : 3;
 
-    typeAhead.limit = 5;
+    typeAhead.limit = opts.hasOwnProperty('limit') ? opts.limit : 5;
 
     typeAhead.query = '';
 

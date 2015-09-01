@@ -58,12 +58,14 @@ t.getCandidates = function (callback) {
 ### Min length and limit
 
 ```javascript
+var opts = {
+	minLength: 1,
+	limit:false
+}
+
 var t = new TypeAhead(document.getElementById('my-control'), [
 	'Asia', 'Africa', 'Europe', 'North America', 'South America', 'Oceania'
-]);
-
-t.minLength = 1; // suggest on first letter
-t.limit = false; // no limit
+], opts);
 ```
 
 ### Use objects instead of strings
