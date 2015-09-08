@@ -313,7 +313,6 @@ TypeAheadList.prototype.drawItem = function (item, active) {
  * @param {string|Object} item
  */
 TypeAheadList.prototype.handleMouseDown = function (item) {
-  console.log('MOUSEDOWN')
     this.typeAhead.value(item);
     this.typeAhead.callback(item);
     this.clear();
