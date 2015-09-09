@@ -19,7 +19,9 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.limit = opts.hasOwnProperty('limit') ? opts.limit : 5;
 
-    typeAhead.callback = opts.hasOwnProperty('callback') ? opts.callback : function(){};
+    typeAhead.onMouseDown = opts.hasOwnProperty('onMouseDown') ? opts.onMouseDown : function(){};
+
+    typeAhead.onKeyDown = opts.hasOwnProperty('onKeyDown') ? opts.onKeyDown : function(){};
 
     typeAhead.query = '';
 
@@ -92,7 +94,7 @@ TypeAhead.prototype.handleKeyDown = function (keyCode) {
     if (keyCode === 13 && !this.list.isEmpty()) {
         this.value(this.list.items[this.list.active]);
         this.list.hide();
-        this.callback(this.list.items[this.list.active]);
+        this.onKeyDown(this.list.items[this.list.active]);
         return true;
     }
 
@@ -313,6 +315,7 @@ TypeAheadList.prototype.drawItem = function (item, active) {
  */
 TypeAheadList.prototype.handleMouseDown = function (item) {
     this.typeAhead.value(item);
+    this.typeAhead.onMouseDown(item);
     this.clear();
     this.draw();
 };
