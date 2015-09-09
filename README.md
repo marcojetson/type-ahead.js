@@ -120,3 +120,28 @@ var t = new TypeAhead(document.getElementById('my-control'), [
 Found an issue? Have a feature request? Open a [Github Issue]() and/or [fork this repo]().
 
 ## License
+
+## Changelog
+
+All notable changes to this project will be documented in this file.
+
+*This project adheres to [Semantic Versioning](http://semver.org/) and [Keep A Changelog](http://keepachangelog.com/).*
+
+### v2.0.0 - 09-09-2015
+
+| Type | Link | Description |
+| ---- | ---- | ----------- |
+| Changed | https://github.com/marcojetson/type-ahead.js/pull/11#issuecomment-138800307 | Callback API. Now uses `opts.onMouseDown` and `opts.onKeyDown` |
+
+### v1.1.0 - 01-09-2015
+
+| Type | Link | Description |
+| ---- | ---- | ----------- |
+| Added | https://github.com/marcojetson/type-ahead.js/issues/5 | Callback option. Now uses `opts.callback` |
+
+
+### v1.0.0 - 01-09-2015
+
+| Type | Link | Description |
+| ---- | ---- | ----------- |
+| N/A | https://github.com/marcojetson/type-ahead.js/issues/3 | Initial NPM release |
