@@ -85,6 +85,19 @@ t.getItemValue = function (item) {
 };
 ```
 
+### Fulltext Search
+
+`type-ahead` by default searches for the desired string at index `0` of each string in your search list. To enable full-text search, or the desired string at *any* index, enable the `fulltext` flag in the options:
+
+```javascript
+var opts = {
+	fulltext:true
+};
+var t = new TypeAhead(document.getElementById('my-control'), [
+	'Asia', 'Africa', 'Europe', 'North America', 'South America', 'Oceania'
+], opts);
+```
+
 ### Dynamically update list
 Once you've created the `TypeAhead` instance, you can update the items in the autocomplete list via:
 
