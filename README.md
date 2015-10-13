@@ -140,6 +140,12 @@ All notable changes to this project will be documented in this file.
 
 *This project adheres to [Semantic Versioning](http://semver.org/) and [Keep A Changelog](http://keepachangelog.com/).*
 
+### v2.1.0 - 13-10-2015
+
+| Type | Link | Description |
+| ---- | ---- | ----------- |
+| Added | https://github.com/marcojetson/type-ahead.js/pull/13 | Fulltext Searching |
+
 ### v2.0.0 - 09-09-2015
 
 | Type | Link | Description |
