@@ -23,6 +23,8 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.onKeyDown = opts.hasOwnProperty('onKeyDown') ? opts.onKeyDown : function(){};
 
+    typeAhead.fulltext = opts.hasOwnProperty('fulltext') ? opts.fulltext : false;
+
     typeAhead.query = '';
 
     typeAhead.selected = null;
@@ -145,6 +147,9 @@ TypeAhead.prototype.filter = function (value) {
  * @return {Boolean}
  */
 TypeAhead.prototype.match = function (candidate) {
+    if(this.fulltext){
+        return candidate.indexOf(this.query) > -1;
+    }
     return candidate.indexOf(this.query) === 0;
 };
 
