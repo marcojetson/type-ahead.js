@@ -25,6 +25,8 @@ var TypeAhead = function (element, candidates, opts) {
 
     typeAhead.fulltext = opts.hasOwnProperty('fulltext') ? opts.fulltext : false;
 
+    typeAhead.scrollable = opts.hasOwnProperty('scrollable') ? opts.scrollable : false;
+
     typeAhead.query = '';
 
     typeAhead.selected = null;
@@ -286,6 +288,10 @@ TypeAheadList.prototype.draw = function () {
         this.drawItem(this.items[i], this.active === i);
     }
 
+    if (this.typeAhead.scrollable) {
+        this.scroll();
+    }
+
     this.show();
 };
 
@@ -345,6 +351,27 @@ TypeAheadList.prototype.previous = function () {
  */
 TypeAheadList.prototype.next = function () {
     this.move(this.active === this.items.length - 1 ? 0 : this.active + 1);
+};
+
+/**
+ * Adjust the scroll position to keep the active item into the visible area of the list
+ */
+TypeAheadList.prototype.scroll = function () {
+  if (this.isEmpty()) {
+      return;
+  }
+
+  var item = this.element.children[this.active],
+      list = this.element;
+
+  if (item.offsetTop + item.offsetHeight >= list.scrollTop + list.offsetHeight) {
+      list.scrollTop = item.offsetTop + item.offsetHeight - list.offsetHeight;
+      return;
+  }
+
+  if (item.offsetTop < list.scrollTop) {
+      list.scrollTop = item.offsetTop;
+  }
 };
 
 /**
