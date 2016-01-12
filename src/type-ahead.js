@@ -206,7 +206,13 @@ TypeAhead.prototype.getItemValue = function (item) {
  * @return {string}
  */
 TypeAhead.prototype.highlight = function (item) {
-    return this.getItemValue(item).replace(new RegExp('^(' + this.query + ')', 'ig'), function ($1, match) {
+    var regExp;
+    if (this.fulltext) {
+        regExp = '(' + this.query + ')';
+    } else {
+        regExp = '^(' + this.query + ')';
+    }
+    return this.getItemValue(item).replace(new RegExp(regExp, 'ig'), function ($1, match) {
         return '<strong>' + match + '</strong>';
     });
 };
